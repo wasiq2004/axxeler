@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axxeler Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+</head>
+<body>
+
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../../assets/images/brand/Asset 2.png" alt="Axxeler" class="admin-logo" onerror="this.style.display='none'">
+                <div class="admin-badge">Admin</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-view="leads">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    Leads Management
+                </a>
+                <a href="#" class="nav-item" data-view="blog">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    Blog CMS
+                </a>
+                <a href="#" class="nav-item" data-view="settings">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    Settings
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">A</div>
+                    <div class="user-info">
+                        <div class="user-name">Axxeler Admin</div>
+                        <div class="user-role">Super Admin</div>
+                    </div>
+                </div>
+                <a href="../../index.html" class="logout-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    Exit Admin
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <h1 class="view-title" id="viewTitle">Leads Management</h1>
+                <div class="topbar-actions">
+                    <button class="btn btn-outline">Export CSV</button>
+                    <button class="btn btn-primary" id="primaryActionBtn" style="display: none;">+ New Post</button>
+                </div>
+            </header>
+
+            <div class="dashboard-container">
+                
+                <!-- VIEW: LEADS -->
+                <div id="view-leads" class="view-section active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">Total Leads</div>
+                            <div class="stat-value">124</div>
+                            <div class="stat-trend positive">+12% this week</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">New (Uncontacted)</div>
+                            <div class="stat-value" style="color: var(--primary);">18</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Conversion Rate</div>
+                            <div class="stat-value">8.4%</div>
+                        </div>
+                    </div>
+
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Source</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leadsTableBody">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- VIEW: BLOG -->
+                <div id="view-blog" class="view-section">
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Post Title</th>
+                                    <th>Category</th>
+                                    <th>Author</th>
+                                    <th>Date Published</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="blogTableBody">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- VIEW: CREATE POST (Sub-view) -->
+                <div id="view-editor" class="view-section">
+                    <div class="editor-container">
+                        <button class="btn btn-text" id="backToBlogBtn">← Back to Blog Posts</button>
+                        
+                        <div class="form-group" style="margin-top: 24px;">
+                            <label>Post Title</label>
+                            <input type="text" id="postTitle" class="form-control" placeholder="Enter an engaging title...">
+                        </div>
+                        
+                        <div class="grid-2" style="gap: 24px;">
+                            <div class="form-group">
+                                <label>Category/Tags</label>
+                                <input type="text" id="postTags" class="form-control" placeholder="e.g. SEO, Zapier, Local Business">
+                            </div>
+                            <div class="form-group">
+                                <label>Author</label>
+                                <input type="text" id="postAuthor" class="form-control" value="Barani Kumar">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Content (Markdown or HTML)</label>
+                            <textarea id="postContent" class="form-control" rows="15" placeholder="Write your brilliant content here..."></textarea>
+                        </div>
+                        
+                        <div class="editor-actions">
+                            <button class="btn btn-outline" id="cancelPostBtn">Cancel</button>
+                            <button class="btn btn-primary" id="savePostBtn">Publish Post</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">Action completed successfully.</div>
+
+    <script src="../../assets/js/admin.js"></script>
+</body>
+</html>
