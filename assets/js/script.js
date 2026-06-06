@@ -1,5 +1,96 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // --- Global Footer SSOT ---
+  const renderGlobalFooter = () => {
+    const footers = document.querySelectorAll('footer');
+    if (!footers.length) return;
+
+    const year = new Date().getFullYear();
+    const footerMarkup = `
+      <footer class="footer" data-footer-ssot="true">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a href="index.html" class="logo" aria-label="Axxeler home">
+                <img src="assets/images/brand/Asset 2.png" alt="Axxeler Logo" class="logo-img" onerror="this.style.display='none'">
+              </a>
+              <p>We automate the boring so you can focus on the brilliant.</p>
+              <div class="footer-contact">
+                <a href="mailto:hello@axxeler.in">hello@axxeler.in</a>
+              </div>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/company/axxeler/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://www.youtube.com/@baranikumargd" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                </a>
+                <a href="https://www.instagram.com/axxeler.in/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://x.com/Baranikumargd" target="_blank" rel="noopener" class="social-link" aria-label="X">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.5 16h4.5L8.5 4H4z"></path><path d="M4 20 20 4"></path></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="footer-col">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="services.html">Lead Capture Automation</a></li>
+                <li><a href="services.html">Customer Onboarding</a></li>
+                <li><a href="services.html">Data Sync & Integration</a></li>
+                <li><a href="services.html">Invoice Automation</a></li>
+                <li><a href="services.html">Sales Process Automation</a></li>
+                <li><a href="services.html">Communication Automation</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Products</h4>
+              <ul>
+                <li><a href="products.html">WhatsApp CRM</a></li>
+                <li><a href="products.html">Voice Agents</a></li>
+                <li><a href="products.html">WhatsApp Agent</a></li>
+                <li><a href="products.html">CRM for All</a></li>
+                <li><a href="products.html">Tooling & SDKs</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="casestudies.html">Case Studies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div>&copy; ${year} Axxeler. All rights reserved. Built to automate your future.</div>
+            <div class="footer-legal">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </footer>`;
+
+    footers.forEach((footer, index) => {
+      if (index === 0) {
+        footer.outerHTML = footerMarkup;
+      } else {
+        footer.remove();
+      }
+    });
+  };
+
+  renderGlobalFooter();
+
   // --- Theme Toggle ---
   const themeToggle = document.getElementById('themeToggle');
   
@@ -228,10 +319,12 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       
-      const submitBtn = form.querySelector('.submit-btn');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
+      const submitBtn = form.querySelector('.submit-btn, button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+      }
 
       try {
         const response = await fetch(form.action, {
@@ -256,8 +349,10 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (error) {
         alert('Oops! There was a problem submitting your form');
       } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
+        if (submitBtn) {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
       }
     });
   });

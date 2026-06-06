@@ -4,12 +4,12 @@
 The contact form uses **Formspree** - a free, serverless form backend that requires no setup or backend infrastructure.
 
 **Features:**
-- ✅ Receive emails for every submission
-- ✅ Form submissions stored online
-- ✅ Export data to CSV
-- ✅ Spam protection included
-- ✅ Works with pure HTML (no Node.js needed)
-- ✅ Free tier includes up to 50 submissions/month
+- [OK] Receive emails for every submission
+- [OK] Form submissions stored online
+- [OK] Export data to CSV
+- [OK] Spam protection included
+- [OK] Works with pure HTML (no Node.js needed)
+- [OK] Free tier includes up to 50 submissions/month
 
 ## Setup Instructions
 
@@ -42,7 +42,7 @@ Example:
 3. Toggle "Send me a copy" on
 4. Save settings
 
-Done! ✅ Form is now live and will send emails.
+Done! [OK] Form is now live and will send emails.
 
 ## How It Works
 
@@ -137,10 +137,10 @@ Formspree handles all backend processing automatically.
 
 ## Data Privacy
 
-- ✅ GDPR Compliant
-- ✅ Your data is encrypted
-- ✅ Never sold to third parties
-- ✅ Data deletion on request
+- [OK] GDPR Compliant
+- [OK] Your data is encrypted
+- [OK] Never sold to third parties
+- [OK] Data deletion on request
 
 ## Troubleshooting
 
