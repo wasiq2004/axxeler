@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </a>
               <p>We automate the boring so you can focus on the brilliant.</p>
               <div class="footer-contact">
-                <a href="mailto:hello@axxeler.in">hello@axxeler.in</a>
+                <a href="mailto:helpaxxeler@gmail.com">helpaxxeler@gmail.com</a>
               </div>
               <div class="social-links">
                 <a href="https://www.linkedin.com/company/axxeler/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
